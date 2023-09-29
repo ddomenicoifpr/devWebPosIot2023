@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+
+    <h2>Cadastro de times</h2>
+
+    <input id="inpTime" type="text" 
+        placeholder="Informe o time" />
+
+    <br><br>
+
+    <select id="selEstado">
+        <option value="">--Selecione o estado--</option>
+        <option value="PR">Paraná</option>
+        <option value="SC">Santa Catarina</option>
+        <option value="RS">Rio Grande do Sul</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="mostrarDados()" 
+        id="bntEnviar">Enviar</button>
+
+    <p id="pErros" style="color: red;"></p>
+
+    <p id="pDados" style="color: blue;"></p>
+
+    <script src="formulario.js"></script>
+</body>
+</html>
