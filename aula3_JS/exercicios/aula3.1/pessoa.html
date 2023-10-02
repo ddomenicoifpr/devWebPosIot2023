@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pessoas</title>
+    
+    <style>
+    	span {
+            color: red;
+    	}
+    
+    </style>
+</head>
+<body>
+    <h1>Pessoas</h1>
+
+    <form>
+        <input type="text" id="txtNome"
+            placeholder="Nome"/>
+        <br>
+        <span id="spanNome"></span>    
+
+        <br><br>
+
+        <input type="text" id="txtEmail"
+            placeholder="E-mail"/>
+        <br>
+        <span id="spanEmail"></span>
+
+        <br><br>
+
+        <input type="text" id="txtTelefone"
+            placeholder="Telefone"/>
+        <br>
+        <span id="spanTelefone"></span>
+
+        <br><br>
+        <button type="button" onclick="mostrarDadosPessoa();">
+                Enviar</button>
+    </form>
+
+    <br><br>
+    <div id="divPessoa"></div>
+
+    <script src="pessoa.js"></script>
+</body>
+</html>
