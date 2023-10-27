@@ -1,15 +1,18 @@
 <?php 
 $login = "";
-if(isset($_POST['login']))
-    $login = $_POST['login'];
-
 $senha = "";
-if(isset($_POST['senha']))
+$logado = false;
+$msgErro = "";
+
+if(isset($_POST['login']) && isset($_POST['senha'])) {
+    $login = $_POST['login'];
     $senha = $_POST['senha'];
 
-$logado = false;
-if($login == 'ifpr' && $senha == 'posIoT')
-    $logado = true;
+    if($login == 'ifpr' && $senha == 'posIoT')
+        $logado = true;
+    else
+        $msgErro = "Login ou senha inválidos!";
+}
 ?>
 
 <!DOCTYPE html>
@@ -36,6 +39,10 @@ if($login == 'ifpr' && $senha == 'posIoT')
 
             <button type="submit">Logar</button>
         </form>
+
+        <div style="color: red;"> 
+            <?php echo $msgErro; ?>
+        </div>
     <?php else: ?>
         <div style="color: green;"> 
             Bem-vindo a Pós IoT!
