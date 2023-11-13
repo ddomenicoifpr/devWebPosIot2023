@@ -24,3 +24,13 @@ function livros_salvar($titulo, $genero, $qtdPag) {
     $stm = $con->prepare($sql);
     $stm->execute(array($titulo, $genero, $qtdPag));
 }
+
+//Excluir livros
+function livros_excluir($idLivro) {
+    $con = conectar_banco();
+
+    $sql = "DELETE FROM livros WHERE id = ?";
+
+    $stm = $con->prepare($sql);
+    $stm->execute(array($idLivro));
+}

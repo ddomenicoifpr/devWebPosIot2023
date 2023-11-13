@@ -1,3 +1,17 @@
+<?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+//include_once(__DIR__ . "/banco/conexao.php");
+//$conn = conectar_banco();
+//print_r($conn);
+
+include_once(__DIR__ . "/banco/sql_livros.php");
+$livros = livros_listar();
+//print_r($livros);
+//echo "<pre>" . print_r($livros, true) . "</pre>";
+//echo $livros[2]['titulo'];
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -48,6 +62,27 @@
                 <th></th>
             </tr>
         </thead>
+        <tbody>
+            <?php foreach($livros as $l): ?>
+            <tr>
+                <td><?= $l['titulo']; ?></td>
+                <td><?php 
+                    if($l['genero'] == 'D')
+                        echo "Drama";
+                    elseif($l['genero'] == 'F')
+                        echo "Ficção";
+                    elseif($l['genero'] == 'R')
+                        echo "Romance";
+                    elseif($l['genero'] == 'O')
+                        echo "Outros";
+                ?></td>
+                <td><?php echo $l['qtd_paginas']; ?></td>
+                <td><a href="livros_del.php?id=<?php echo $l['id']; ?>"
+                        onclick="return confirm('Confirma a exclusão do livro?')">
+                        Excluir</a></td>
+            </tr>
+            <?php endforeach; ?>    
+        </tbody>
     </table>
 
 </body>

@@ -1,8 +1,9 @@
 <?php
 
 //Constantes com os dados da conexão ao banco de dados
+//Alterar essas configurações de acordo com o seu ambiente
 define("DB_HOST", 'mysql-server');
-define("DB_BASE", 'pos_livros');
+define("DB_BASE", 'banco_pos');
 define("DB_USUARIO", 'root');
 define("DB_SENHA", 'root');
 
