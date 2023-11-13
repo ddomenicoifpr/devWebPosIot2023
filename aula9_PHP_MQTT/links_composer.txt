@@ -1,0 +1,10 @@
+A instalação do Composer é simples e pode ser encontrada no link abaixo:
+
+WINDOWS
+https://www.youtube.com/watch?v=URsHXA664KA
+
+
+LINUX
+https://www.youtube.com/watch?v=h7dpIUUCf1k
+
+No Linux, também pode-se utilizar as instruções disponíveis em https://getcomposer.org/download/.
