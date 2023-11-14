@@ -52,6 +52,9 @@ $livros = livros_listar();
         <button type="reset">Limpar</button>
     </form>
 
+    <div id="divMsg" style="color: red; display: none;">
+    </div>
+
     <h3>Listagem de livros</h3>
     <table border="1">
         <thead>
@@ -77,14 +80,14 @@ $livros = livros_listar();
                         echo "Outros";
                 ?></td>
                 <td><?php echo $l['qtd_paginas']; ?></td>
-                <td><a href="livros_del.php?id=<?php echo $l['id']; ?>"
-                        onclick="return confirm('Confirma a exclusão do livro?')">
+                <td><a href="livros_del.php?id=<?php echo $l['id']; ?>" >
                         Excluir</a></td>
             </tr>
             <?php endforeach; ?>    
         </tbody>
     </table>
 
+    <script src="js/validacao.js"></script>
 </body>
 
 </html>
