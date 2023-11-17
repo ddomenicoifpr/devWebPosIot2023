@@ -2,20 +2,20 @@
 
 include_once(__DIR__ . "/banco/sql_livros.php");
 
-//Verificar se o ID do livro foi enviado/recebido
-$id = "";
+//Recebe o ID enviado por parâmeto GET
+$id = 0;
 if(isset($_GET['id']))
     $id = $_GET['id'];
 
-if(! $id) {
-    echo "ID do livro não informado!";
-    echo "<br>";
+//Caso o parâmetro não tenha sido enviado
+if($id <= 0) {
+    echo "ID do livro não recebido!<br>";
     echo "<a href='livros.php'>Voltar</a>";
     exit;
 }
 
-//Excluir o livro
+//Excluir o livro com base no ID recebido
 livros_excluir($id);
 
-//Redirecionar a página
+//Retornar a página de listagem dos livros
 header("location: livros.php");

@@ -7,7 +7,7 @@ const divMsg = document.querySelector("#divMsg");
 function validar() {
     var msgErro = "";
 
-    if(! inpTitulo.value) {
+    if(inpTitulo.value == '') {
         msgErro = "Informe o título do livro!";
     } else if(! inpGenero.value) {
         msgErro = "Informe o gênero do livro!";
