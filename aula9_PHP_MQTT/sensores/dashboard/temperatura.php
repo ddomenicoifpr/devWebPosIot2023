@@ -11,7 +11,7 @@ if(! $temperaturas) {
     exit;
 }
 
-//
+//Gera a lista de temperaturas em ordem inversa
 $temperaturasDesc = array_reverse($temperaturas)
 ?>
 <!DOCTYPE html>
