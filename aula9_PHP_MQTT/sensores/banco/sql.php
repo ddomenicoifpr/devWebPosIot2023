@@ -17,8 +17,7 @@ function salvar_leitura($tabela, $momento, $valor) {
 function listar_leituras($tabela) {
     $con = conectar_banco();
 
-    $sql = "SELECT * FROM " . $tabela . 
-            " ORDER BY id DESC";
+    $sql = "SELECT * FROM " . $tabela;
 
     $stm = $con->prepare($sql);
     $stm->execute();
