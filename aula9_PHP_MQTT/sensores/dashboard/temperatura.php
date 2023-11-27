@@ -71,7 +71,8 @@ $temperaturasDesc = array_reverse($temperaturas)
     </div>
 
     <!-- Gráficos -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" 
+        src="https://www.gstatic.com/charts/loader.js"></script>
 
     <!-- Gráfico Linha -->
     <script src="graficoLinha.js"></script>
@@ -96,7 +97,7 @@ $temperaturasDesc = array_reverse($temperaturas)
 
             var data = google.visualization.arrayToDataTable([
                 ['Label', 'Value'],
-                ['Temp.', <?= $temperaturas[0]['valor'] ?>]
+                ['Temp.', <?= $temperaturasDesc[0]['valor'] ?>]
             ]);
 
             var options = {

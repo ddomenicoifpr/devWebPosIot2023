@@ -9,7 +9,7 @@ require(__DIR__ . '/../banco/sql.php');
 use \PhpMqtt\Client\MqttClient;
 
 //Conectando ao broker MQTT
-$server   = 'localhost'; //host do broquer
+$server   = 'ivmq.com'; //host do broquer
 $port     = 1883;
 $clientId = "comsumo_id";
 
@@ -24,10 +24,24 @@ $topico = 'sensor/temperatura';
 $mqtt->subscribe($topico, 
     function ($topic, $message) {
       echo "\n";
-      echo "Mensagem recebida [" . $topic . "]: ";
+      //echo "Mensagem recebida [" . $topic . "]: ";
       echo $message . "\n";
 
-      //TODO - O que fazer com a mensagem?
+      //Converter o json (texto) para array associativo
+      $dados = json_decode($message, true);
+      //print_r($dados);
+      
+      //Verificar o formato dos dados
+      if(!isset($dados["timestamp"]) or 
+              !isset($dados["temperatura"])) {
+        echo "Formato de dados inválido!\n";
+        return;
+      }
+
+      //Inserir os dados no banco
+      salvar_leitura("sensor_temperatura", 
+                      $dados["timestamp"], $dados['temperatura']);
+      echo "Leitura salva na base de dados\n";
     }, 
     $qos);
 
